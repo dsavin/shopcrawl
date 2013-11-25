@@ -1,0 +1,24 @@
+generator:
+  class:  tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           ShopcrawlProduct
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: false
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          shopcrawl_product
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        ShopcrawlCategory: { label: "Category"}
+        ShopcrawlManufacturer: { label: "Manufacturer" }
+      list:
+        display: [=name, ShopcrawlCategory, ShopcrawlManufacturer, price, sku, material ]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

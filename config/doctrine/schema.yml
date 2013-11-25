@@ -1,0 +1,40 @@
+ShopcrawlCategory:
+  actAs: { Timestampable: ~ }
+  columns:
+    name: { type: string(255) }
+
+ShopcrawlManufacturer:
+  actAs: { Timestampable: ~ }
+  columns:
+    name: { type: string(255) }
+
+ShopcrawlShop:
+  actAs: { Timestampable: ~ }
+  columns:
+    type:          { type: string(255) }
+    url:           { type: string(255) }
+    title:         { type: string(255) }
+    contact:       { type: string(4000) }
+
+ShopcrawlProduct:
+  actAs: { Timestampable: ~ }
+  columns:
+    category_id:      { type: integer, notnull: true }
+    shop_id:          { type: integer, notnull: true }
+    manufacturer_id:  { type: integer, notnull: true }
+    name:             { type: string(255) }
+    description:      { type: string(4000) }
+    price:            { type: string(255) }
+    material:         { type: string(4000) }
+    color:            { type: string(255) }
+    gender:           { type: string(255) }
+    image:            { type: string(255) }
+    sku:              { type: string(255) }
+
+  relations:
+    ShopcrawlCategory:      { onDelete: CASCADE, local: category_id, foreign: id, foreignAlias: ShopcrawlProducts }
+    ShopcrawlShop:          { onDelete: CASCADE, local: shop_id, foreign: id, foreignAlias: ShopcrawlProducts }
+    ShopcrawlManufacturer:  { onDelete: CASCADE, local: manufacturer_id, foreign: id, foreignAlias: ShopcrawlProducts }
+
+
+

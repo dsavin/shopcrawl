@@ -1,0 +1,21 @@
+generator:
+  class:  tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           ShopcrawlManufacturer
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          shopcrawl_manufacturer
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  tmcTwitterBootstrapPlugin:
+    header:
+      menu:
+        products:
+          module: product
+          route: shopcrawl_product
+        categories:
+          module: category
+          route: shopcrawl_category
+        manufacturers:
+          module: manufacturer
+          route: shopcrawl_manufacturer
+        shops:
+          module: shop
+          route: shopcrawl_shop
